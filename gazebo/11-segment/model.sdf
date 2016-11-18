@@ -49,7 +49,7 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>/home/fabian/.gazebo/models/11-segment/meshes/lowpoly.stl</uri>
+            <uri>model://11-segment/meshes/lowpoly.stl</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -148,7 +148,7 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>/home/fabian/.gazebo/models/11-segment/meshes/lowpoly.stl</uri>
+            <uri>model://11-segment/meshes/lowpoly.stl</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -247,7 +247,7 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>/home/fabian/.gazebo/models/11-segment/meshes/lowpoly.stl</uri>
+            <uri>model://11-segment/meshes/lowpoly.stl</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -346,7 +346,7 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>/home/fabian/.gazebo/models/11-segment/meshes/lowpoly.stl</uri>
+            <uri>model://11-segment/meshes/lowpoly.stl</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -445,7 +445,7 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>/home/fabian/.gazebo/models/11-segment/meshes/lowpoly.stl</uri>
+            <uri>model://11-segment/meshes/lowpoly.stl</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -544,7 +544,7 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>/home/fabian/.gazebo/models/11-segment/meshes/lowpoly.stl</uri>
+            <uri>model://11-segment/meshes/lowpoly.stl</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -643,7 +643,7 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>/home/fabian/.gazebo/models/11-segment/meshes/lowpoly.stl</uri>
+            <uri>model://11-segment/meshes/lowpoly.stl</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -742,7 +742,7 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>/home/fabian/.gazebo/models/11-segment/meshes/lowpoly.stl</uri>
+            <uri>model://11-segment/meshes/lowpoly.stl</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -841,7 +841,7 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>/home/fabian/.gazebo/models/11-segment/meshes/lowpoly.stl</uri>
+            <uri>model://11-segment/meshes/lowpoly.stl</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -940,7 +940,7 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>/home/fabian/.gazebo/models/11-segment/meshes/lowpoly.stl</uri>
+            <uri>model://11-segment/meshes/lowpoly.stl</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -1039,7 +1039,7 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>/home/fabian/.gazebo/models/11-segment/meshes/lowpoly.stl</uri>
+            <uri>model://11-segment/meshes/lowpoly.stl</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>

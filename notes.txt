@@ -3,5 +3,3 @@
 2. load with low-poly model seems OK, 35% (of 1 core i5-6600K @4,5Ghz) 
 for 18 segments; model has 146 verts/290 tris (compared to cylinder: 
 34/124)
-3. Technical drawing of mid-segment missing; distance betweed joints 
-required
