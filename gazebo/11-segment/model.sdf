@@ -4,14 +4,14 @@
     <link name='segment_00'>
       <pose frame=''>0 0 0 0 -0 0</pose>
       <inertial>
-        <mass>1</mass>
+        <mass>0.4</mass>
         <inertia>
-          <ixx>0.166667</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>0.166667</iyy>
-          <iyz>0</iyz>
-          <izz>0.166667</izz>
+          <ixx>0.00018565</ixx>
+          <ixy>0.00003467</ixy>
+          <ixz>-0.0002976</ixz>
+          <iyy>0.00034114</iyy>
+          <iyz>0.00000185</iyz>
+          <izz>0.00033012</izz>
         </inertia>
         <pose frame=''>0 0 0 0 -0 0</pose>
       </inertial>
@@ -103,14 +103,14 @@
     <link name='segment_01'>
       <pose frame=''>0.084 0 0 1.5708 -0 0</pose>
       <inertial>
-        <mass>1</mass>
+        <mass>0.4</mass>
         <inertia>
-          <ixx>0.166667</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>0.166667</iyy>
-          <iyz>0</iyz>
-          <izz>0.166667</izz>
+          <ixx>0.00018565</ixx>
+          <ixy>0.00003467</ixy>
+          <ixz>-0.0002976</ixz>
+          <iyy>0.00034114</iyy>
+          <iyz>0.00000185</iyz>
+          <izz>0.00033012</izz>
         </inertia>
         <pose frame=''>0 0 0 0 -0 0</pose>
       </inertial>
@@ -202,14 +202,14 @@
     <link name='segment_02'>
       <pose frame=''>0.168 0 0 3.14159 -0 0</pose>
       <inertial>
-        <mass>1</mass>
+        <mass>0.4</mass>
         <inertia>
-          <ixx>0.166667</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>0.166667</iyy>
-          <iyz>0</iyz>
-          <izz>0.166667</izz>
+          <ixx>0.00018565</ixx>
+          <ixy>0.00003467</ixy>
+          <ixz>-0.0002976</ixz>
+          <iyy>0.00034114</iyy>
+          <iyz>0.00000185</iyz>
+          <izz>0.00033012</izz>
         </inertia>
         <pose frame=''>0 0 0 0 -0 0</pose>
       </inertial>
@@ -301,14 +301,14 @@
     <link name='segment_03'>
       <pose frame=''>0.252 0 0 -1.57079 0 0</pose>
       <inertial>
-        <mass>1</mass>
+        <mass>0.4</mass>
         <inertia>
-          <ixx>0.166667</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>0.166667</iyy>
-          <iyz>0</iyz>
-          <izz>0.166667</izz>
+          <ixx>0.00018565</ixx>
+          <ixy>0.00003467</ixy>
+          <ixz>-0.0002976</ixz>
+          <iyy>0.00034114</iyy>
+          <iyz>0.00000185</iyz>
+          <izz>0.00033012</izz>
         </inertia>
         <pose frame=''>0 0 0 0 -0 0</pose>
       </inertial>
@@ -400,14 +400,14 @@
     <link name='segment_04'>
       <pose frame=''>0.336 0 0 0 -0 0</pose>
       <inertial>
-        <mass>1</mass>
+        <mass>0.4</mass>
         <inertia>
-          <ixx>0.166667</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>0.166667</iyy>
-          <iyz>0</iyz>
-          <izz>0.166667</izz>
+          <ixx>0.00018565</ixx>
+          <ixy>0.00003467</ixy>
+          <ixz>-0.0002976</ixz>
+          <iyy>0.00034114</iyy>
+          <iyz>0.00000185</iyz>
+          <izz>0.00033012</izz>
         </inertia>
         <pose frame=''>0 0 0 0 -0 0</pose>
       </inertial>
@@ -499,14 +499,14 @@
     <link name='segment_05'>
       <pose frame=''>0.42 0 0 1.5708 -0 0</pose>
       <inertial>
-        <mass>1</mass>
+        <mass>0.4</mass>
         <inertia>
-          <ixx>0.166667</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>0.166667</iyy>
-          <iyz>0</iyz>
-          <izz>0.166667</izz>
+          <ixx>0.00018565</ixx>
+          <ixy>0.00003467</ixy>
+          <ixz>-0.0002976</ixz>
+          <iyy>0.00034114</iyy>
+          <iyz>0.00000185</iyz>
+          <izz>0.00033012</izz>
         </inertia>
         <pose frame=''>0 0 0 0 -0 0</pose>
       </inertial>
@@ -598,14 +598,14 @@
     <link name='segment_06'>
       <pose frame=''>0.504 0 0 3.14159 -0 0</pose>
       <inertial>
-        <mass>1</mass>
+        <mass>0.4</mass>
         <inertia>
-          <ixx>0.166667</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>0.166667</iyy>
-          <iyz>0</iyz>
-          <izz>0.166667</izz>
+          <ixx>0.00018565</ixx>
+          <ixy>0.00003467</ixy>
+          <ixz>-0.0002976</ixz>
+          <iyy>0.00034114</iyy>
+          <iyz>0.00000185</iyz>
+          <izz>0.00033012</izz>
         </inertia>
         <pose frame=''>0 0 0 0 -0 0</pose>
       </inertial>
@@ -697,14 +697,14 @@
     <link name='segment_07'>
       <pose frame=''>0.588 0 0 -1.57079 0 0</pose>
       <inertial>
-        <mass>1</mass>
+        <mass>0.4</mass>
         <inertia>
-          <ixx>0.166667</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>0.166667</iyy>
-          <iyz>0</iyz>
-          <izz>0.166667</izz>
+          <ixx>0.00018565</ixx>
+          <ixy>0.00003467</ixy>
+          <ixz>-0.0002976</ixz>
+          <iyy>0.00034114</iyy>
+          <iyz>0.00000185</iyz>
+          <izz>0.00033012</izz>
         </inertia>
         <pose frame=''>0 0 0 0 -0 0</pose>
       </inertial>
@@ -796,14 +796,14 @@
     <link name='segment_08'>
       <pose frame=''>0.672 0 0 0 -0 0</pose>
       <inertial>
-        <mass>1</mass>
+        <mass>0.4</mass>
         <inertia>
-          <ixx>0.166667</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>0.166667</iyy>
-          <iyz>0</iyz>
-          <izz>0.166667</izz>
+          <ixx>0.00018565</ixx>
+          <ixy>0.00003467</ixy>
+          <ixz>-0.0002976</ixz>
+          <iyy>0.00034114</iyy>
+          <iyz>0.00000185</iyz>
+          <izz>0.00033012</izz>
         </inertia>
         <pose frame=''>0 0 0 0 -0 0</pose>
       </inertial>
@@ -895,14 +895,14 @@
     <link name='segment_09'>
       <pose frame=''>0.756 0 0 1.5708 -0 0</pose>
       <inertial>
-        <mass>1</mass>
+        <mass>0.4</mass>
         <inertia>
-          <ixx>0.166667</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>0.166667</iyy>
-          <iyz>0</iyz>
-          <izz>0.166667</izz>
+          <ixx>0.00018565</ixx>
+          <ixy>0.00003467</ixy>
+          <ixz>-0.0002976</ixz>
+          <iyy>0.00034114</iyy>
+          <iyz>0.00000185</iyz>
+          <izz>0.00033012</izz>
         </inertia>
         <pose frame=''>0 0 0 0 -0 0</pose>
       </inertial>
@@ -994,14 +994,14 @@
     <link name='segment_10'>
       <pose frame=''>0.84 0 0 3.14159 -0 0</pose>
       <inertial>
-        <mass>1</mass>
+        <mass>0.4</mass>
         <inertia>
-          <ixx>0.166667</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>0.166667</iyy>
-          <iyz>0</iyz>
-          <izz>0.166667</izz>
+          <ixx>0.00018565</ixx>
+          <ixy>0.00003467</ixy>
+          <ixz>-0.0002976</ixz>
+          <iyy>0.00034114</iyy>
+          <iyz>0.00000185</iyz>
+          <izz>0.00033012</izz>
         </inertia>
         <pose frame=''>0 0 0 0 -0 0</pose>
       </inertial>
