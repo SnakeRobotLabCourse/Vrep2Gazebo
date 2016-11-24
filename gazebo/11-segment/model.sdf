@@ -13,7 +13,7 @@
           <iyz>0.00000185</iyz>
           <izz>0.00033012</izz>
         </inertia>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose frame=''>0.063972 -0.002978 -0.001553 0 -0 0</pose>
       </inertial>
       <self_collide>1</self_collide>
       <kinematic>0</kinematic>
@@ -112,7 +112,7 @@
           <iyz>0.00000185</iyz>
           <izz>0.00033012</izz>
         </inertia>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose frame=''>0.063972 -0.002978 -0.001553 0 -0 0</pose>
       </inertial>
       <self_collide>1</self_collide>
       <kinematic>0</kinematic>
@@ -211,7 +211,7 @@
           <iyz>0.00000185</iyz>
           <izz>0.00033012</izz>
         </inertia>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose frame=''>0.063972 -0.002978 -0.001553 0 -0 0</pose>
       </inertial>
       <self_collide>1</self_collide>
       <kinematic>0</kinematic>
@@ -310,7 +310,7 @@
           <iyz>0.00000185</iyz>
           <izz>0.00033012</izz>
         </inertia>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose frame=''>0.063972 -0.002978 -0.001553 0 -0 0</pose>
       </inertial>
       <self_collide>1</self_collide>
       <kinematic>0</kinematic>
@@ -409,7 +409,7 @@
           <iyz>0.00000185</iyz>
           <izz>0.00033012</izz>
         </inertia>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose frame=''>0.063972 -0.002978 -0.001553 0 -0 0</pose>
       </inertial>
       <self_collide>1</self_collide>
       <kinematic>0</kinematic>
@@ -508,7 +508,7 @@
           <iyz>0.00000185</iyz>
           <izz>0.00033012</izz>
         </inertia>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose frame=''>0.063972 -0.002978 -0.001553 0 -0 0</pose>
       </inertial>
       <self_collide>1</self_collide>
       <kinematic>0</kinematic>
@@ -607,7 +607,7 @@
           <iyz>0.00000185</iyz>
           <izz>0.00033012</izz>
         </inertia>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose frame=''>0.063972 -0.002978 -0.001553 0 -0 0</pose>
       </inertial>
       <self_collide>1</self_collide>
       <kinematic>0</kinematic>
@@ -706,7 +706,7 @@
           <iyz>0.00000185</iyz>
           <izz>0.00033012</izz>
         </inertia>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose frame=''>0.063972 -0.002978 -0.001553 0 -0 0</pose>
       </inertial>
       <self_collide>1</self_collide>
       <kinematic>0</kinematic>
@@ -805,7 +805,7 @@
           <iyz>0.00000185</iyz>
           <izz>0.00033012</izz>
         </inertia>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose frame=''>0.063972 -0.002978 -0.001553 0 -0 0</pose>
       </inertial>
       <self_collide>1</self_collide>
       <kinematic>0</kinematic>
@@ -904,7 +904,7 @@
           <iyz>0.00000185</iyz>
           <izz>0.00033012</izz>
         </inertia>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose frame=''>0.063972 -0.002978 -0.001553 0 -0 0</pose>
       </inertial>
       <self_collide>1</self_collide>
       <kinematic>0</kinematic>
@@ -1003,7 +1003,7 @@
           <iyz>0.00000185</iyz>
           <izz>0.00033012</izz>
         </inertia>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose frame=''>0.063972 -0.002978 -0.001553 0 -0 0</pose>
       </inertial>
       <self_collide>1</self_collide>
       <kinematic>0</kinematic>
