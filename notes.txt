@@ -1,5 +1,0 @@
-1. collision of small objects is problematic (try placing a 
-0.06x0.06x0.1m cylinder 10 deg tilted above ground in vrep/gazebo)
-2. load with low-poly model seems OK, 35% (of 1 core i5-6600K @4,5Ghz) 
-for 18 segments; model has 146 verts/290 tris (compared to cylinder: 
-34/124)
