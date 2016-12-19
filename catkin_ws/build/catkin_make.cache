@@ -1,0 +1,2 @@
+
+-DCATKIN_DEVEL_PREFIX=/home/osboxes/Desktop/RoboSnake/Vrep2Gazebo/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/osboxes/Desktop/RoboSnake/Vrep2Gazebo/catkin_ws/install -G Unix Makefiles
