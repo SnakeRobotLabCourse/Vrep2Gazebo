@@ -5,5 +5,5 @@
     <!-- more default parameters can be changed here -->
   </include>
   <!-- Spawn a robot into Gazebo -->
-  <node name="spawn_sdf" pkg="gazebo_ros" type="spawn_model" args="-file $(find robosnake_description)/sdf/11segment.sdf -sdf -z 1 -model 11-segment" />
+  <node name="spawn_sdf" pkg="gazebo_ros" type="spawn_model" args="-file $(find robosnake_description)/sdf/11segment.sdf -sdf -z 1 -model 11segment" />
 </launch>
