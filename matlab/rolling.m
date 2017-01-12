@@ -63,8 +63,8 @@ end
 
 function [] = setJointTargetPosition(joint, position)
     %TODO
-    anglePub = rospublisher(strcat('/11segment/', joint), 'std_msgs/Float32');
-    msg = rosmessage('std_msgs/Float32');
+    anglePub = rospublisher(strcat('/robosnake/joint', joint(7), '_position_controller/command'), 'std_msgs/Float64');
+    msg = rosmessage('std_msgs/Float64');
     msg.Data = position;
     send(anglePub, msg); 
 end

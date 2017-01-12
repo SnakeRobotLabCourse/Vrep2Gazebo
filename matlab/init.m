@@ -1,5 +1,5 @@
-ipaddress='192.168.184.130';
+ipaddress='192.168.184.4';
 rosinit(ipaddress);
 gazebo = ExampleHelperGazeboCommunicator();
-snake=ExampleHelperGazeboSpawnedModel('11segment', gazebo);
+snake=ExampleHelperGazeboSpawnedModel('robosnake', gazebo);
 [snakeLinks, snakeJoints] = getComponents(snake);
