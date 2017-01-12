@@ -1,9 +1,22 @@
 <launch>
-  <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
+ <param name="robot_description" textfile="$(find robosnake_description)/urdf/robosnake.urdf" />
+ <param name="robot_description_sdf" textfile="$(find robosnake_description)/sdf/robosnake.sdf" /> 
+ <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="world_name" value="$(find robosnake_gazebo)/worlds/robosnake.world"/>
     <!-- more default parameters can be changed here -->
   </include>
   <!-- Spawn a robot into Gazebo -->
-  <node name="spawn_sdf" pkg="gazebo_ros" type="spawn_model" args="-file $(find robosnake_description)/sdf/11segment.sdf -sdf -z 1 -model 11segment" />
+  <node 
+    name="spawn_model" 
+    pkg="gazebo_ros" 
+    type="spawn_model"
+    args="-sdf -param robot_description_sdf -model robosnake -z 1" />
+  
+  <!--<rosparam file="$(find robosnake_control)/config/robosnake_control.yaml" command="load"/>-->
+
+  <!--<node name="controller_spawner" 
+    pkg="controller_manager" 
+    type="spawner" respawn="false" output="screen"
+    args="joint1_position_controller joint_state_controller"/>-->
 </launch>

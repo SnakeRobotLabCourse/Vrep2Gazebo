@@ -1,6 +1,6 @@
 <?xml version='1.0'?>
 <sdf version='1.6'>
-  <model name='11segment'>
+  <model name='robosnake'>
     <link name='segment_00'>
       <pose frame=''>0 0 0 0 -0 0</pose>
       <inertial>
@@ -1423,7 +1423,7 @@
     <static>0</static>
     <allow_auto_disable>1</allow_auto_disable>
     <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-        <robotNamespace>/11segment</robotNamespace>
+        <robotNamespace>/robosnake</robotNamespace>
     </plugin>
   </model>
 </sdf>
