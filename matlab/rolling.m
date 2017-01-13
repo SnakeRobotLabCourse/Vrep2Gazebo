@@ -1,8 +1,11 @@
-function [] = rolling(obj, event, snake, snakeJoints, timeStep) %#ok<INUSL>
+function [] = rolling(obj, event, timeStep) %#ok<INUSL>
 %ROLLING Summary of this function goes here
 %   Detailed explanation goes here
 
     %#ok<*TLEV>
+    
+    global snake;
+    global snakeJoints;
     
     %initialization--------------------------------------------------------
     persistent is_initialized;
@@ -55,17 +58,27 @@ function [] = rolling(obj, event, snake, snakeJoints, timeStep) %#ok<INUSL>
     end
     
     for i = 1:5
-        setJointTargetPosition(joints_v{i}, (A_V{1} * (1 - s) + A_V{2} * s) * sin(t * (speed{1} * (1 - s) + speed{2} * s) + i * (P_V{1} * (1 - s) + P_V{2} * s)));
-        setJointTargetPosition(joints_h{i}, (A_H{1} * (1 - s) + A_H{2} * s) * cos(t * (speed{1} * (1 - s) + speed{2} * s) + i * (P_H{1} * (1 - s) + P_H{2} * s)));
+        setJointTargetPosition(str2double(joints_v{i}(7)), (A_V{1} * (1 - s) + A_V{2} * s) * sin(t * (speed{1} * (1 - s) + speed{2} * s) + i * (P_V{1} * (1 - s) + P_V{2} * s)));
+        setJointTargetPosition(str2double(joints_h{i}(7)), (A_H{1} * (1 - s) + A_H{2} * s) * cos(t * (speed{1} * (1 - s) + speed{2} * s) + i * (P_H{1} * (1 - s) + P_H{2} * s)));
     end
 end
 
 
 function [] = setJointTargetPosition(joint, position)
+    global snakeJoints;
+    persistent anglePubs;
+    persistent angleMsgs;
+    if isempty(anglePubs)
+        anglePubs = cell(size(snakeJoints));
+        angleMsgs = cell(size(snakeJoints));
+    end
+    if isempty(anglePubs{joint+1})
+        anglePubs{joint+1} = rospublisher(strcat('/robosnake/joint', num2str(joint), '_position_controller/command'), 'std_msgs/Float64');
+        angleMsgs{joint+1} = rosmessage('std_msgs/Float64');
+        fprintf('Initializing Joint %i\n', joint);
+    end
     %TODO
-    anglePub = rospublisher(strcat('/robosnake/joint', joint(7), '_position_controller/command'), 'std_msgs/Float64');
-    msg = rosmessage('std_msgs/Float64');
-    msg.Data = position;
-    send(anglePub, msg); 
+    angleMsgs{joint+1}.Data = position;
+    send(anglePubs{joint+1}, angleMsgs{joint+1}); 
 end
 

@@ -1,7 +1,7 @@
-t = timer('TimerFcn',{@rolling, snake, snakeJoints, 1},'Period', 1, 'ExecutionMode', 'FixedRate');
+t = timer('TimerFcn',{@rolling, 0.1},'Period', 0.1, 'ExecutionMode', 'FixedRate');
 start(t);
 
-pause(1.9);
+pause(10);
 
 stop(t);
 delete(t);
