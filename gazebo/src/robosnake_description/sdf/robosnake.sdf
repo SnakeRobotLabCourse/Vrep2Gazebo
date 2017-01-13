@@ -2,23 +2,24 @@
 <sdf version='1.6'>
   <model name='robosnake'>
     <link name='segment_00'>
-      <pose frame=''>0 0 0 0 -0 0</pose>
+      <pose>0 0 0 0 -0 0</pose>
       <inertial>
         <mass>0.4</mass>
         <inertia>
-          <ixx>1.8565e-4</ixx>
-          <ixy>0.3467e-4</ixy>
-          <ixz>-2.976e-4</ixz>
-          <iyy>3.4114e-4</iyy>
-          <iyz>0.0185e-4</iyz>
-          <izz>3.3012e-4</izz>
+          <ixx>1.8565e-3</ixx>
+          <ixy>0.3467e-5</ixy>
+          <ixz>-2.976e-5</ixz>
+          <iyy>3.4114e-3</iyy>
+          <iyz>0.0185e-5</iyz>
+          <izz>3.3012e-3</izz>
         </inertia>
+		<pose>0.063972 -0.002978 -0.001553 0 -0 0</pose>
       </inertial>
       <self_collide>1</self_collide>
       <kinematic>0</kinematic>
       <gravity>1</gravity>
       <visual name='visual'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
             <uri>model://11segment/meshes/highpoly.stl</uri>
@@ -45,7 +46,7 @@
       <collision name='collision'>
         <laser_retro>0</laser_retro>
         <max_contacts>10</max_contacts>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
             <uri>model://11segment/meshes/lowpoly.stl</uri>
@@ -100,23 +101,24 @@
       </collision>
     </link>
     <link name='segment_01'>
-      <pose frame=''>0.084 0 0 1.5708 -0 0</pose>
+      <pose>0.084 0 0 1.5708 -0 0</pose>
       <inertial>
         <mass>0.4</mass>
         <inertia>
-          <ixx>1.8565e-4</ixx>
-          <ixy>0.3467e-4</ixy>
-          <ixz>-2.976e-4</ixz>
-          <iyy>3.4114e-4</iyy>
-          <iyz>0.0185e-4</iyz>
-          <izz>3.3012e-4</izz>
+          <ixx>1.8565e-3</ixx>
+          <ixy>0.3467e-5</ixy>
+          <ixz>-2.976e-5</ixz>
+          <iyy>3.4114e-3</iyy>
+          <iyz>0.0185e-5</iyz>
+          <izz>3.3012e-3</izz>
         </inertia>
+		<pose>0.063972 -0.002978 -0.001553 0 -0 0</pose>
       </inertial>
       <self_collide>1</self_collide>
       <kinematic>0</kinematic>
       <gravity>1</gravity>
       <visual name='visual'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
             <uri>model://11segment/meshes/highpoly.stl</uri>
@@ -143,7 +145,7 @@
       <collision name='collision'>
         <laser_retro>0</laser_retro>
         <max_contacts>10</max_contacts>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
             <uri>model://11segment/meshes/lowpoly.stl</uri>
@@ -198,23 +200,24 @@
       </collision>
     </link>
     <link name='segment_02'>
-      <pose frame=''>0.168 0 0 3.14159 -0 0</pose>
+      <pose>0.168 0 0 3.14159 -0 0</pose>
       <inertial>
         <mass>0.4</mass>
         <inertia>
-          <ixx>1.8565e-4</ixx>
-          <ixy>0.3467e-4</ixy>
-          <ixz>-2.976e-4</ixz>
-          <iyy>3.4114e-4</iyy>
-          <iyz>0.0185e-4</iyz>
-          <izz>3.3012e-4</izz>
+          <ixx>1.8565e-3</ixx>
+          <ixy>0.3467e-5</ixy>
+          <ixz>-2.976e-5</ixz>
+          <iyy>3.4114e-3</iyy>
+          <iyz>0.0185e-5</iyz>
+          <izz>3.3012e-3</izz>
         </inertia>
+		<pose>0.063972 -0.002978 -0.001553 0 -0 0</pose>
       </inertial>
       <self_collide>1</self_collide>
       <kinematic>0</kinematic>
       <gravity>1</gravity>
       <visual name='visual'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
             <uri>model://11segment/meshes/highpoly.stl</uri>
@@ -241,7 +244,7 @@
       <collision name='collision'>
         <laser_retro>0</laser_retro>
         <max_contacts>10</max_contacts>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
             <uri>model://11segment/meshes/lowpoly.stl</uri>
@@ -296,23 +299,24 @@
       </collision>
     </link>
     <link name='segment_03'>
-      <pose frame=''>0.252 0 0 -1.57079 0 0</pose>
+      <pose>0.252 0 0 -1.57079 0 0</pose>
       <inertial>
         <mass>0.4</mass>
         <inertia>
-          <ixx>1.8565e-4</ixx>
-          <ixy>0.3467e-4</ixy>
-          <ixz>-2.976e-4</ixz>
-          <iyy>3.4114e-4</iyy>
-          <iyz>0.0185e-4</iyz>
-          <izz>3.3012e-4</izz>
+          <ixx>1.8565e-3</ixx>
+          <ixy>0.3467e-5</ixy>
+          <ixz>-2.976e-5</ixz>
+          <iyy>3.4114e-3</iyy>
+          <iyz>0.0185e-5</iyz>
+          <izz>3.3012e-3</izz>
         </inertia>
+		<pose>0.063972 -0.002978 -0.001553 0 -0 0</pose>
       </inertial>
       <self_collide>1</self_collide>
       <kinematic>0</kinematic>
       <gravity>1</gravity>
       <visual name='visual'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
             <uri>model://11segment/meshes/highpoly.stl</uri>
@@ -339,7 +343,7 @@
       <collision name='collision'>
         <laser_retro>0</laser_retro>
         <max_contacts>10</max_contacts>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
             <uri>model://11segment/meshes/lowpoly.stl</uri>
@@ -394,23 +398,24 @@
       </collision>
     </link>
     <link name='segment_04'>
-      <pose frame=''>0.336 0 0 0 -0 0</pose>
+      <pose>0.336 0 0 0 -0 0</pose>
       <inertial>
         <mass>0.4</mass>
         <inertia>
-          <ixx>1.8565e-4</ixx>
-          <ixy>0.3467e-4</ixy>
-          <ixz>-2.976e-4</ixz>
-          <iyy>3.4114e-4</iyy>
-          <iyz>0.0185e-4</iyz>
-          <izz>3.3012e-4</izz>
+          <ixx>1.8565e-3</ixx>
+          <ixy>0.3467e-5</ixy>
+          <ixz>-2.976e-5</ixz>
+          <iyy>3.4114e-3</iyy>
+          <iyz>0.0185e-5</iyz>
+          <izz>3.3012e-3</izz>
         </inertia>
+		<pose>0.063972 -0.002978 -0.001553 0 -0 0</pose>
       </inertial>
       <self_collide>1</self_collide>
       <kinematic>0</kinematic>
       <gravity>1</gravity>
       <visual name='visual'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
             <uri>model://11segment/meshes/highpoly.stl</uri>
@@ -437,7 +442,7 @@
       <collision name='collision'>
         <laser_retro>0</laser_retro>
         <max_contacts>10</max_contacts>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
             <uri>model://11segment/meshes/lowpoly.stl</uri>
@@ -492,23 +497,24 @@
       </collision>
     </link>
     <link name='segment_05'>
-      <pose frame=''>0.42 0 0 1.5708 -0 0</pose>
+      <pose>0.42 0 0 1.5708 -0 0</pose>
       <inertial>
         <mass>0.4</mass>
         <inertia>
-          <ixx>1.8565e-4</ixx>
-          <ixy>0.3467e-4</ixy>
-          <ixz>-2.976e-4</ixz>
-          <iyy>3.4114e-4</iyy>
-          <iyz>0.0185e-4</iyz>
-          <izz>3.3012e-4</izz>
+          <ixx>1.8565e-3</ixx>
+          <ixy>0.3467e-5</ixy>
+          <ixz>-2.976e-5</ixz>
+          <iyy>3.4114e-3</iyy>
+          <iyz>0.0185e-5</iyz>
+          <izz>3.3012e-3</izz>
         </inertia>
+		<pose>0.063972 -0.002978 -0.001553 0 -0 0</pose>
       </inertial>
       <self_collide>1</self_collide>
       <kinematic>0</kinematic>
       <gravity>1</gravity>
       <visual name='visual'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
             <uri>model://11segment/meshes/highpoly.stl</uri>
@@ -535,7 +541,7 @@
       <collision name='collision'>
         <laser_retro>0</laser_retro>
         <max_contacts>10</max_contacts>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
             <uri>model://11segment/meshes/lowpoly.stl</uri>
@@ -590,23 +596,24 @@
       </collision>
     </link>
     <link name='segment_06'>
-      <pose frame=''>0.504 0 0 3.14159 -0 0</pose>
+      <pose>0.504 0 0 3.14159 -0 0</pose>
       <inertial>
         <mass>0.4</mass>
         <inertia>
-          <ixx>1.8565e-4</ixx>
-          <ixy>0.3467e-4</ixy>
-          <ixz>-2.976e-4</ixz>
-          <iyy>3.4114e-4</iyy>
-          <iyz>0.0185e-4</iyz>
-          <izz>3.3012e-4</izz>
+          <ixx>1.8565e-3</ixx>
+          <ixy>0.3467e-5</ixy>
+          <ixz>-2.976e-5</ixz>
+          <iyy>3.4114e-3</iyy>
+          <iyz>0.0185e-5</iyz>
+          <izz>3.3012e-3</izz>
         </inertia>
+		<pose>0.063972 -0.002978 -0.001553 0 -0 0</pose>
       </inertial>
       <self_collide>1</self_collide>
       <kinematic>0</kinematic>
       <gravity>1</gravity>
       <visual name='visual'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
             <uri>model://11segment/meshes/highpoly.stl</uri>
@@ -633,7 +640,7 @@
       <collision name='collision'>
         <laser_retro>0</laser_retro>
         <max_contacts>10</max_contacts>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
             <uri>model://11segment/meshes/lowpoly.stl</uri>
@@ -688,23 +695,24 @@
       </collision>
     </link>
     <link name='segment_07'>
-      <pose frame=''>0.588 0 0 -1.57079 0 0</pose>
+      <pose>0.588 0 0 -1.57079 0 0</pose>
       <inertial>
         <mass>0.4</mass>
         <inertia>
-          <ixx>1.8565e-4</ixx>
-          <ixy>0.3467e-4</ixy>
-          <ixz>-2.976e-4</ixz>
-          <iyy>3.4114e-4</iyy>
-          <iyz>0.0185e-4</iyz>
-          <izz>3.3012e-4</izz>
+          <ixx>1.8565e-3</ixx>
+          <ixy>0.3467e-5</ixy>
+          <ixz>-2.976e-5</ixz>
+          <iyy>3.4114e-3</iyy>
+          <iyz>0.0185e-5</iyz>
+          <izz>3.3012e-3</izz>
         </inertia>
+		<pose>0.063972 -0.002978 -0.001553 0 -0 0</pose>
       </inertial>
       <self_collide>1</self_collide>
       <kinematic>0</kinematic>
       <gravity>1</gravity>
       <visual name='visual'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
             <uri>model://11segment/meshes/highpoly.stl</uri>
@@ -731,7 +739,7 @@
       <collision name='collision'>
         <laser_retro>0</laser_retro>
         <max_contacts>10</max_contacts>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
             <uri>model://11segment/meshes/lowpoly.stl</uri>
@@ -786,23 +794,24 @@
       </collision>
     </link>
     <link name='segment_08'>
-      <pose frame=''>0.672 0 0 0 -0 0</pose>
+      <pose>0.672 0 0 0 -0 0</pose>
       <inertial>
         <mass>0.4</mass>
         <inertia>
-          <ixx>1.8565e-4</ixx>
-          <ixy>0.3467e-4</ixy>
-          <ixz>-2.976e-4</ixz>
-          <iyy>3.4114e-4</iyy>
-          <iyz>0.0185e-4</iyz>
-          <izz>3.3012e-4</izz>
+          <ixx>1.8565e-3</ixx>
+          <ixy>0.3467e-5</ixy>
+          <ixz>-2.976e-5</ixz>
+          <iyy>3.4114e-3</iyy>
+          <iyz>0.0185e-5</iyz>
+          <izz>3.3012e-3</izz>
         </inertia>
+		<pose>0.063972 -0.002978 -0.001553 0 -0 0</pose>
       </inertial>
       <self_collide>1</self_collide>
       <kinematic>0</kinematic>
       <gravity>1</gravity>
       <visual name='visual'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
             <uri>model://11segment/meshes/highpoly.stl</uri>
@@ -829,7 +838,7 @@
       <collision name='collision'>
         <laser_retro>0</laser_retro>
         <max_contacts>10</max_contacts>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
             <uri>model://11segment/meshes/lowpoly.stl</uri>
@@ -884,23 +893,24 @@
       </collision>
     </link>
     <link name='segment_09'>
-      <pose frame=''>0.756 0 0 1.5708 -0 0</pose>
+      <pose>0.756 0 0 1.5708 -0 0</pose>
       <inertial>
         <mass>0.4</mass>
         <inertia>
-          <ixx>1.8565e-4</ixx>
-          <ixy>0.3467e-4</ixy>
-          <ixz>-2.976e-4</ixz>
-          <iyy>3.4114e-4</iyy>
-          <iyz>0.0185e-4</iyz>
-          <izz>3.3012e-4</izz>
+          <ixx>1.8565e-3</ixx>
+          <ixy>0.3467e-5</ixy>
+          <ixz>-2.976e-5</ixz>
+          <iyy>3.4114e-3</iyy>
+          <iyz>0.0185e-5</iyz>
+          <izz>3.3012e-3</izz>
         </inertia>
+		<pose>0.063972 -0.002978 -0.001553 0 -0 0</pose>
       </inertial>
       <self_collide>1</self_collide>
       <kinematic>0</kinematic>
       <gravity>1</gravity>
       <visual name='visual'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
             <uri>model://11segment/meshes/highpoly.stl</uri>
@@ -927,7 +937,7 @@
       <collision name='collision'>
         <laser_retro>0</laser_retro>
         <max_contacts>10</max_contacts>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
             <uri>model://11segment/meshes/lowpoly.stl</uri>
@@ -982,23 +992,24 @@
       </collision>
     </link>
     <link name='segment_10'>
-      <pose frame=''>0.84 0 0 3.14159 -0 0</pose>
+      <pose>0.84 0 0 3.14159 -0 0</pose>
       <inertial>
         <mass>0.4</mass>
         <inertia>
-          <ixx>1.8565e-4</ixx>
-          <ixy>0.3467e-4</ixy>
-          <ixz>-2.976e-4</ixz>
-          <iyy>3.4114e-4</iyy>
-          <iyz>0.0185e-4</iyz>
-          <izz>3.3012e-4</izz>
+          <ixx>1.8565e-3</ixx>
+          <ixy>0.3467e-5</ixy>
+          <ixz>-2.976e-5</ixz>
+          <iyy>3.4114e-3</iyy>
+          <iyz>0.0185e-5</iyz>
+          <izz>3.3012e-3</izz>
         </inertia>
+		<pose>0.063972 -0.002978 -0.001553 0 -0 0</pose>
       </inertial>
       <self_collide>1</self_collide>
       <kinematic>0</kinematic>
       <gravity>1</gravity>
       <visual name='visual'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
             <uri>model://11segment/meshes/highpoly.stl</uri>
@@ -1025,7 +1036,7 @@
       <collision name='collision'>
         <laser_retro>0</laser_retro>
         <max_contacts>10</max_contacts>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
             <uri>model://11segment/meshes/lowpoly.stl</uri>
@@ -1082,7 +1093,7 @@
     <joint name='joint_0' type='revolute'>
       <parent>segment_00</parent>
       <child>segment_01</child>
-      <pose frame=''>0.007 0 0 0 -0 0</pose>
+      <pose>0.007 0 0 0 -0 0</pose>
       <axis>
         <xyz>0 0 1</xyz>
         <use_parent_model_frame>0</use_parent_model_frame>
@@ -1115,7 +1126,7 @@
     <joint name='joint_1' type='revolute'>
       <parent>segment_01</parent>
       <child>segment_02</child>
-      <pose frame=''>0.007 0 0 0 -0 0</pose>
+      <pose>0.007 0 0 0 -0 0</pose>
       <axis>
         <xyz>0 0 1</xyz>
         <use_parent_model_frame>0</use_parent_model_frame>
@@ -1148,7 +1159,7 @@
     <joint name='joint_2' type='revolute'>
       <parent>segment_02</parent>
       <child>segment_03</child>
-      <pose frame=''>0.007 0 0 0 -0 0</pose>
+      <pose>0.007 0 0 0 -0 0</pose>
       <axis>
         <xyz>0 0 -1</xyz>
         <use_parent_model_frame>0</use_parent_model_frame>
@@ -1181,7 +1192,7 @@
     <joint name='joint_3' type='revolute'>
       <parent>segment_03</parent>
       <child>segment_04</child>
-      <pose frame=''>0.007 0 0 0 -0 0</pose>
+      <pose>0.007 0 0 0 -0 0</pose>
       <axis>
         <xyz>0 0 -1</xyz>
         <use_parent_model_frame>0</use_parent_model_frame>
@@ -1214,7 +1225,7 @@
     <joint name='joint_4' type='revolute'>
       <parent>segment_04</parent>
       <child>segment_05</child>
-      <pose frame=''>0.007 0 0 0 -0 0</pose>
+      <pose>0.007 0 0 0 -0 0</pose>
       <axis>
         <xyz>0 0 1</xyz>
         <use_parent_model_frame>0</use_parent_model_frame>
@@ -1247,7 +1258,7 @@
     <joint name='joint_5' type='revolute'>
       <parent>segment_05</parent>
       <child>segment_06</child>
-      <pose frame=''>0.007 0 0 0 -0 0</pose>
+      <pose>0.007 0 0 0 -0 0</pose>
       <axis>
         <xyz>0 0 1</xyz>
         <use_parent_model_frame>0</use_parent_model_frame>
@@ -1280,7 +1291,7 @@
     <joint name='joint_6' type='revolute'>
       <parent>segment_06</parent>
       <child>segment_07</child>
-      <pose frame=''>0.007 0 0 0 -0 0</pose>
+      <pose>0.007 0 0 0 -0 0</pose>
       <axis>
         <xyz>0 0 -1</xyz>
         <use_parent_model_frame>0</use_parent_model_frame>
@@ -1313,7 +1324,7 @@
     <joint name='joint_7' type='revolute'>
       <parent>segment_07</parent>
       <child>segment_08</child>
-      <pose frame=''>0.007 0 0 0 -0 0</pose>
+      <pose>0.007 0 0 0 -0 0</pose>
       <axis>
         <xyz>0 0 -1</xyz>
         <use_parent_model_frame>0</use_parent_model_frame>
@@ -1346,7 +1357,7 @@
     <joint name='joint_8' type='revolute'>
       <parent>segment_08</parent>
       <child>segment_09</child>
-      <pose frame=''>0.007 0 0 0 -0 0</pose>
+      <pose>0.007 0 0 0 -0 0</pose>
       <axis>
         <xyz>0 0 1</xyz>
         <use_parent_model_frame>0</use_parent_model_frame>
@@ -1379,7 +1390,7 @@
     <joint name='joint_9' type='revolute'>
       <parent>segment_09</parent>
       <child>segment_10</child>
-      <pose frame=''>0.007 0 0 0 -0 0</pose>
+      <pose>0.007 0 0 0 -0 0</pose>
       <axis>
         <xyz>0 0 1</xyz>
         <use_parent_model_frame>0</use_parent_model_frame>
