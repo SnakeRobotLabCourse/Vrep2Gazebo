@@ -7,5 +7,5 @@ global snakeLinks;
 global snakeJoints;
 
 gazebo = ExampleHelperGazeboCommunicator();
-snake=ExampleHelperGazeboSpawnedModel('robosnake', gazebo);
+snake = ExampleHelperGazeboSpawnedModel('robosnake', gazebo);
 [snakeLinks, snakeJoints] = getComponents(snake);

@@ -1095,7 +1095,7 @@
       <child>segment_01</child>
       <pose frame=''>0.007 0 0 0 -0 0</pose>
       <axis>
-        <xyz>0 0 -1</xyz>
+        <xyz>0 0 1</xyz>
         <use_parent_model_frame>0</use_parent_model_frame>
         <limit>
           <lower>-1.5708</lower>
@@ -1128,7 +1128,7 @@
       <child>segment_02</child>
       <pose frame=''>0.007 0 0 0 -0 0</pose>
       <axis>
-        <xyz>0 0 -1</xyz>
+        <xyz>0 0 1</xyz>
         <use_parent_model_frame>0</use_parent_model_frame>
         <limit>
           <lower>-1.5708</lower>
@@ -1227,7 +1227,7 @@
       <child>segment_05</child>
       <pose frame=''>0.007 0 0 0 -0 0</pose>
       <axis>
-        <xyz>0 0 -1</xyz>
+        <xyz>0 0 1</xyz>
         <use_parent_model_frame>0</use_parent_model_frame>
         <limit>
           <lower>-1.5708</lower>
@@ -1260,7 +1260,7 @@
       <child>segment_06</child>
       <pose frame=''>0.007 0 0 0 -0 0</pose>
       <axis>
-        <xyz>0 0 -1</xyz>
+        <xyz>0 0 1</xyz>
         <use_parent_model_frame>0</use_parent_model_frame>
         <limit>
           <lower>-1.5708</lower>
@@ -1359,7 +1359,7 @@
       <child>segment_09</child>
       <pose frame=''>0.007 0 0 0 -0 0</pose>
       <axis>
-        <xyz>0 0 -1</xyz>
+        <xyz>0 0 1</xyz>
         <use_parent_model_frame>0</use_parent_model_frame>
         <limit>
           <lower>-1.5708</lower>
@@ -1392,7 +1392,7 @@
       <child>segment_10</child>
       <pose frame=''>0.007 0 0 0 -0 0</pose>
       <axis>
-        <xyz>0 0 -1</xyz>
+        <xyz>0 0 1</xyz>
         <use_parent_model_frame>0</use_parent_model_frame>
         <limit>
           <lower>-1.5708</lower>
