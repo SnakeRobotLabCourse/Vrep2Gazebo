@@ -13,7 +13,7 @@
           <iyz>0.0185e-5</iyz>
           <izz>3.3012e-3</izz>
         </inertia>
-		<pose>0.063972 -0.002978 -0.001553 0 -0 0</pose>
+	<pose>0.063972 -0.002978 -0.001553 0 -0 0</pose>
       </inertial>
       <self_collide>1</self_collide>
       <kinematic>0</kinematic>
