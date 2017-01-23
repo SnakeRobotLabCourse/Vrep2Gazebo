@@ -1,4 +1,4 @@
-ipaddress='192.168.30.130';
+ipaddress='192.168.184.4';
 rosinit(ipaddress);
 
 global gazebo;

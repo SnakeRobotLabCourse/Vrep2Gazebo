@@ -1,4 +1,4 @@
-function [] = rolling(obj, event) %#ok<INUSL>
+function [] = rolling(obj, event, timeStep) %#ok<INUSL>
 %ROLLING Summary of this function goes here
 %   Detailed explanation goes here
 
@@ -21,7 +21,7 @@ function [] = rolling(obj, event) %#ok<INUSL>
     persistent P_V;
     persistent P_H;
     persistent s;
-    persistent t_0;
+    persistent t;
     persistent clock;
     if isempty(is_initialized)
         is_initialized = 1;    
@@ -32,7 +32,7 @@ function [] = rolling(obj, event) %#ok<INUSL>
         end
    
         %-- 2 sets of control Parameters:
-        speed={-4, -4};%-2,-2
+        speed={-2, -2};
         amplitude_h = {20, 30};
         amplitude_v = {20, 30};
         phase_v = {0, 0};
@@ -43,17 +43,16 @@ function [] = rolling(obj, event) %#ok<INUSL>
         A_V = {amplitude_v{1} * pi / 180, amplitude_v{2} * pi / 180};
         P_V = {phase_v{1} * pi / 180, phase_v{2} * pi / 180};
         P_H = {phase_h{1} * pi / 180, phase_h{2} * pi / 180};
+
+        s = 0;
+        t = 0;
         
         clock = rossubscriber('/clock');
-        
-        s = 0;
-        data = receive(clock);
-        t_0 = double(data(1).Clock_.Sec) + double(data(1).Clock_.Nsec)/1000000000;
     end
 
     %acutal work-----------------------------------------------------------
     data = receive(clock);
-    t = double(data(1).Clock_.Sec) + double(data(1).Clock_.Nsec)/1000000000 - t_0;
+    t = data(1).Clock_.Sec +;
     
     if (t > 20)  %-- Here we do a transition from one movement type to the other movement type (between time=10 and time=11):
         s = t-20;

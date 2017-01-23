@@ -1,8 +1,9 @@
-t = timer('TimerFcn',{@rolling, 0.1},'Period', 0.1, 'ExecutionMode', 'FixedRate');
+t = timer('TimerFcn',{@rolling},'Period', 0.2, 'ExecutionMode', 'FixedRate');
 start(t);
 
-pause(10);
+pause(20);
 
 stop(t);
 delete(t);
+resetSnake;
 clear rolling
