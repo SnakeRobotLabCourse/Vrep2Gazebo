@@ -14,52 +14,52 @@
   <joint name='joint_0' type='revolute'>
       <parent link="segment_00" />
       <child link="segment_01" />
-      <limit effort="100.0" lower="-1.5708" upper="1.5708" velocity="1"/>
+      <limit effort="17.2886" lower="-1.5708" upper="1.5708" velocity="1.6936"/>
   </joint>
   <joint name='joint_1' type='revolute'>
       <parent link="segment_01" />
       <child link="segment_02" />
-      <limit effort="100.0" lower="-1.5708" upper="1.5708" velocity="1"/>
+      <limit effort="17.2886" lower="-1.5708" upper="1.5708" velocity="1.6936"/>
   </joint>
   <joint name='joint_2' type='revolute'>
       <parent link="segment_02" />
       <child link="segment_03" />
-      <limit effort="100.0" lower="-1.5708" upper="1.5708" velocity="1"/>
+      <limit effort="17.2886" lower="-1.5708" upper="1.5708" velocity="1.6936"/>
   </joint>
   <joint name='joint_3' type='revolute'>
       <parent link="segment_03" />
       <child link="segment_04" />
-      <limit effort="100.0" lower="-1.5708" upper="1.5708" velocity="1"/>
+      <limit effort="17.2886" lower="-1.5708" upper="1.5708" velocity="1.6936"/>
   </joint>
   <joint name='joint_4' type='revolute'>
       <parent link="segment_04" />
       <child link="segment_05" />
-      <limit effort="100.0" lower="-1.5708" upper="1.5708" velocity="1"/>
+      <limit effort="17.2886" lower="-1.5708" upper="1.5708" velocity="1.6936"/>
   </joint>
   <joint name='joint_5' type='revolute'>
       <parent link="segment_05" />
       <child link="segment_06" />
-      <limit effort="100.0" lower="-1.5708" upper="1.5708" velocity="1"/>
+      <limit effort="17.2886" lower="-1.5708" upper="1.5708" velocity="1.6936"/>
   </joint>
   <joint name='joint_6' type='revolute'>
       <parent link="segment_06" />
       <child link="segment_07" />
-      <limit effort="100.0" lower="-1.5708" upper="1.5708" velocity="1"/>
+      <limit effort="17.2886" lower="-1.5708" upper="1.5708" velocity="1.6936"/>
   </joint>
   <joint name='joint_7' type='revolute'>
       <parent link="segment_07" />
       <child link="segment_08" />
-      <limit effort="100.0" lower="-1.5708" upper="1.5708" velocity="1"/>
+      <limit effort="17.2886" lower="-1.5708" upper="1.5708" velocity="1.6936"/>
   </joint>
   <joint name='joint_8' type='revolute'>
       <parent link="segment_08" />
       <child link="segment_09" />
-      <limit effort="100.0" lower="-1.5708" upper="1.5708" velocity="1"/>
+      <limit effort="17.2886" lower="-1.5708" upper="1.5708" velocity="1.6936"/>
   </joint>
   <joint name='joint_9' type='revolute'>
       <parent link="segment_09" />
       <child link="segment_10" />
-      <limit effort="100.0" lower="-1.5708" upper="1.5708" velocity="1"/>
+      <limit effort="17.2886" lower="-1.5708" upper="1.5708" velocity="1.6936"/>
   </joint>
 
 
