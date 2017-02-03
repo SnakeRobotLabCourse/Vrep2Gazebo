@@ -44,8 +44,8 @@
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>
-    <gazebo_ros                                                                 
-        gazebo_plugin_path="${prefix}/lib"
+    <gazebo_ros
+        gazebo_media_path="${prefix}/../robosnake_description"
         gazebo_model_path="${prefix}/../robosnake_description" />
   </export>
 </package>
