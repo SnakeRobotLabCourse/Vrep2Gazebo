@@ -32,8 +32,10 @@ namespace gazebo
 
 			// Setup PID controllers
 			for(unsigned i = 0; i < this->joints.size(); i++){
-				this->model->GetJointController()->SetVelocityPID(this->joints[i]->GetScopedName(), common::PID(33, 1.2, 0));
+				pids.push_back(common::PID(33.0, 1.2, 0.0));
+				this->model->GetJointController()->SetPositionPID(this->joints[i]->GetScopedName(), pids[i]);
 			}
+			this->model->GetJointController()->Update();
 			
 			// Initialize ros, if it has not already bee initialized.
 			if (!ros::isInitialized())
@@ -80,7 +82,7 @@ namespace gazebo
     		{
 			// Get the simulation time and period
 			gazebo::common::Time gz_time_now = this->model->GetWorld()->GetSimTime();
-			ros::Time sim_time_ros(gz_time_now.sec, gz_time_now.nsec);
+			ros::Time sim_time_ros (gz_time_now.sec, gz_time_now.nsec);
 			ros::Duration sim_period = sim_time_ros - last_update_sim_time_ros_;
 
 			// Update joint positions
@@ -88,6 +90,8 @@ namespace gazebo
 				double pos = this->gaitPtr->getAngle(sim_period.toSec(), i);
 				this->model->GetJointController()->SetPositionTarget(this->joints[i]->GetScopedName(), pos);
 			}
+
+			this->last_update_sim_time_ros_ = sim_time_ros;
     		}
 
 		/// \brief Handle an incoming message from ROS
@@ -115,6 +119,9 @@ namespace gazebo
 		/// \brief Pointer to the joint.
 		private: physics::Joint_V joints;
 
+		// \brief PID controllers for the joints
+		private: std::vector<common::PID> pids;
+
 		/// \brief A node use for ROS transport
 		private: std::unique_ptr<ros::NodeHandle> rosNode;
 
@@ -134,9 +141,7 @@ namespace gazebo
     		private: event::ConnectionPtr updateConnection;
 
 		// Timing
-		ros::Duration control_period_;
-		ros::Time last_update_sim_time_ros_;
-		ros::Time last_write_sim_time_ros_;
+		private: ros::Time last_update_sim_time_ros_;
 	};
 
 	// Tell Gazebo about this plugin, so that Gazebo can call Load on this plugin.
