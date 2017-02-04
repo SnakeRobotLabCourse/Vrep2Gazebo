@@ -1,5 +1,12 @@
 # Vrep2Gazebo
 
+This Repo contains the SnakeRobot simulation in Gazebo allowing control through ROS with e.g. matlab.
+
+*See [gazebo/](gazebo/) for more details on how to setup Gazebo and ROS*
+
+*See [matlab/](matlab/) for more details on how to control the snake from Matlab*
+
+
 ## Dependencies
 
 ```
