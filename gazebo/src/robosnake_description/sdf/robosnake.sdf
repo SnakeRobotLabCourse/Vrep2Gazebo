@@ -22,7 +22,7 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://11segment/meshes/highpoly.stl</uri>
+            <uri>model://meshes/highpoly.stl</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -49,7 +49,7 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://11segment/meshes/lowpoly.stl</uri>
+            <uri>model://meshes/lowpoly.stl</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -121,7 +121,7 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://11segment/meshes/highpoly.stl</uri>
+            <uri>model://meshes/highpoly.stl</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -148,7 +148,7 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://11segment/meshes/lowpoly.stl</uri>
+            <uri>model://meshes/lowpoly.stl</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -220,7 +220,7 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://11segment/meshes/highpoly.stl</uri>
+            <uri>model://meshes/highpoly.stl</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -247,7 +247,7 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://11segment/meshes/lowpoly.stl</uri>
+            <uri>model://meshes/lowpoly.stl</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -319,7 +319,7 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://11segment/meshes/highpoly.stl</uri>
+            <uri>model://meshes/highpoly.stl</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -346,7 +346,7 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://11segment/meshes/lowpoly.stl</uri>
+            <uri>model://meshes/lowpoly.stl</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -418,7 +418,7 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://11segment/meshes/highpoly.stl</uri>
+            <uri>model://meshes/highpoly.stl</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -445,7 +445,7 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://11segment/meshes/lowpoly.stl</uri>
+            <uri>model://meshes/lowpoly.stl</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -517,7 +517,7 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://11segment/meshes/highpoly.stl</uri>
+            <uri>model://meshes/highpoly.stl</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -544,7 +544,7 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://11segment/meshes/lowpoly.stl</uri>
+            <uri>model://meshes/lowpoly.stl</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -616,7 +616,7 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://11segment/meshes/highpoly.stl</uri>
+            <uri>model://meshes/highpoly.stl</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -643,7 +643,7 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://11segment/meshes/lowpoly.stl</uri>
+            <uri>model://meshes/lowpoly.stl</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -715,7 +715,7 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://11segment/meshes/highpoly.stl</uri>
+            <uri>model://meshes/highpoly.stl</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -742,7 +742,7 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://11segment/meshes/lowpoly.stl</uri>
+            <uri>model://meshes/lowpoly.stl</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -814,7 +814,7 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://11segment/meshes/highpoly.stl</uri>
+            <uri>model://meshes/highpoly.stl</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -841,7 +841,7 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://11segment/meshes/lowpoly.stl</uri>
+            <uri>model://meshes/lowpoly.stl</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -913,7 +913,7 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://11segment/meshes/highpoly.stl</uri>
+            <uri>model://meshes/highpoly.stl</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -940,7 +940,7 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://11segment/meshes/lowpoly.stl</uri>
+            <uri>model://meshes/lowpoly.stl</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -1012,7 +1012,7 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://11segment/meshes/highpoly.stl</uri>
+            <uri>model://meshes/highpoly.stl</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -1039,7 +1039,7 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://11segment/meshes/lowpoly.stl</uri>
+            <uri>model://meshes/lowpoly.stl</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
