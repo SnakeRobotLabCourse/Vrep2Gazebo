@@ -7,7 +7,8 @@
 #include "ros/ros.h"
 #include "ros/callback_queue.h"
 #include "ros/subscribe_options.h"
-#include "std_msgs/Float32.h"
+#include "std_msgs/Float32MultiArray.h"
+#include "std_msgs/Empty.h"
 #include "gait.hpp"
 #include "simplegait.hpp"
 
@@ -17,131 +18,167 @@ namespace gazebo
 	class SimpleGaitPlugin : public ModelPlugin
 	{
 		/// \brief Constructor
-		public: SimpleGaitPlugin() {}
+		public: 
+			SimpleGaitPlugin() {}
 
-		/// \brief The load function is called by Gazebo when the plugin is
-		/// inserted into simulation
-		/// \param[in] _model A pointer to the model that this plugin is
-		/// attached to.
-		/// \param[in] _sdf A pointer to the plugin's SDF element.
-		public: virtual void Load(physics::ModelPtr _model, sdf::ElementPtr _sdf)
-		{
-			
-			this->model = _model;
-			this->joints = _model->GetJoints();
-
-			// Setup PID controllers
-			for(unsigned i = 0; i < this->joints.size(); i++){
-				pids.push_back(common::PID(33.0, 1.2, 0.0));
-				this->model->GetJointController()->SetPositionPID(this->joints[i]->GetScopedName(), pids[i]);
-			}
-			this->model->GetJointController()->Update();
-			
-			// Initialize ros, if it has not already bee initialized.
-			if (!ros::isInitialized())
+			/// \brief The load function is called by Gazebo when the plugin is
+			/// inserted into simulation
+			/// \param[in] _model A pointer to the model that this plugin is
+			/// attached to.
+			/// \param[in] _sdf A pointer to the plugin's SDF element.
+			virtual void Load(physics::ModelPtr _model, sdf::ElementPtr _sdf)
 			{
-			  int argc = 0;
-			  char **argv = NULL;
-			  ros::init(argc, argv, "gazebo_client",
-			      ros::init_options::NoSigintHandler);
-			}
-
-			// Create our ROS node. This acts in a similar manner to
-			// the Gazebo node
-			this->rosNode.reset(new ros::NodeHandle("gazebo_client"));
-
-			// Create a named topic, and subscribe to it.
-			ros::SubscribeOptions so =
-			  ros::SubscribeOptions::create<std_msgs::Float32>(
-			      "/" + this->model->GetName() + "/simplegait_cmd",
-			      1,
-			      boost::bind(&SimpleGaitPlugin::OnRosMsg, this, _1),
-			      ros::VoidPtr(), &this->rosQueue);
-			this->rosSub = this->rosNode->subscribe(so);
-
-			// Spin up the queue helper thread.
-			this->rosQueueThread =
-			  std::thread(std::bind(&SimpleGaitPlugin::QueueThread, this));
-
-			// Bind Gait Polymorphic to SimpleGait
-			SimpleGait* gait = new SimpleGait();
-			this->gaitPtr = gait;
-
-			// Listen to the update event. This event is broadcast every
-      			// simulation iteration.
-      			this->updateConnection = event::Events::ConnectWorldUpdateBegin(
-          			boost::bind(&SimpleGaitPlugin::OnUpdate, this, _1));
-
-			std::cerr << "\nThe simple gait control plugin is attached to model[" <<
-				_model->GetName() << "] with " << this->joints.size() << " joints\n";
+				isRunning = 0;
+				model = _model;
+				joints = _model->GetJoints();
+				// Setup PID controllers
+				for(unsigned i = 0; i < joints.size(); i++){
+					model->GetJointController()->SetPositionPID(joints[i]->GetScopedName(), common::PID(33.0, 1.2, 0.0));
+				}
+				model->GetJointController()->Update();
 			
-		}
+				// Initialize ros, if it has not already bee initialized.
+				if (!ros::isInitialized())
+				{
+				  std::cerr << "Ros was not initialized, initializing...";
+				  int argc = 0;
+				  char **argv = NULL;
+				  ros::init(argc, argv, "gazebo_client",
+				      ros::init_options::NoSigintHandler);
+				}
 
-		// Called by the world update start event
-    		public: void OnUpdate(const common::UpdateInfo & /*_info*/)
-    		{
-			// Get the simulation time and period
-			gazebo::common::Time gz_time_now = this->model->GetWorld()->GetSimTime();
-			ros::Time sim_time_ros (gz_time_now.sec, gz_time_now.nsec);
-			ros::Duration sim_period = sim_time_ros - last_update_sim_time_ros_;
+				// Create our ROS node. This acts in a similar manner to
+				// the Gazebo node
+				rosNode.reset(new ros::NodeHandle("gazebo_client"));
 
-			// Update joint positions
-			for(unsigned i = 0; i < this->joints.size(); i++){
-				double pos = this->gaitPtr->getAngle(sim_period.toSec(), i);
-				this->model->GetJointController()->SetPositionTarget(this->joints[i]->GetScopedName(), pos);
+				// Create a named topic, and subscribe to it.
+				ros::SubscribeOptions so1 = ros::SubscribeOptions::create<std_msgs::Float32MultiArray>(
+				      "/" + model->GetName() + "/gait_amplitude",
+				      1,
+				      boost::bind(&SimpleGaitPlugin::OnRosMsgAmplitude, this, _1),
+				      ros::VoidPtr(), &rosQueue);
+				ros::SubscribeOptions so2 = ros::SubscribeOptions::create<std_msgs::Float32MultiArray>(
+				      "/" + model->GetName() + "/gait_phase",
+				      1,
+				      boost::bind(&SimpleGaitPlugin::OnRosMsgPhase, this, _1),
+				      ros::VoidPtr(), &rosQueue);
+				ros::SubscribeOptions so3 = ros::SubscribeOptions::create<std_msgs::Empty>(
+				      "/" + model->GetName() + "/gait/start",
+				      1,
+				      boost::bind(&SimpleGaitPlugin::OnRosMsgStart, this, _1),
+				      ros::VoidPtr(), &rosQueue);
+					
+				rosSub1 = rosNode->subscribe(so1);
+				rosSub2 = rosNode->subscribe(so2);
+				rosSub3 = rosNode->subscribe(so3);
+
+				// Spin up the queue helper thread.
+				rosQueueThread = std::thread(std::bind(&SimpleGaitPlugin::QueueThread, this));
+
+				// Bind Gait Polymorphic to SimpleGait
+				SimpleGait* gait = new SimpleGait();
+				gaitPtr = gait;
+
+				// Listen to the update event. This event is broadcast every
+	      			// simulation iteration.
+	      			updateConnection = event::Events::ConnectWorldUpdateBegin(
+		  			boost::bind(&SimpleGaitPlugin::OnUpdate, this, _1));
+			
 			}
 
-			this->last_update_sim_time_ros_ = sim_time_ros;
-    		}
+			// Called by the world update start event
+	    		void OnUpdate(const common::UpdateInfo & /*_info*/)
+	    		{
+				// Get the simulation time and period
+				gazebo::common::Time gz_time_now = model->GetWorld()->GetSimTime();
+				ros::Time sim_time_ros (gz_time_now.sec, gz_time_now.nsec);
+				ros::Duration sim_period = sim_time_ros - last_update_sim_time_ros_;
 
-		/// \brief Handle an incoming message from ROS
-		/// \param[in] _msg A float value that is used to set the velocity
-		/// of the Velodyne.
-		public: void OnRosMsg(const std_msgs::Float32ConstPtr &_msg)
-		{
-		  //this->SetVelocity(_msg->data);
-			printf("message\n");
-		}
+				if (isRunning){
+					// Update joint positions
+					for(unsigned i = 0; i < joints.size(); i++){
+						double pos = gaitPtr->getAngle(sim_period.toSec(), i);
+						model->GetJointController()->SetPositionTarget(joints[i]->GetScopedName(), pos);
+					}
+				}
+
+				last_update_sim_time_ros_ = sim_time_ros;
+	    		}
+			// Called on world reset
+			void Reset()
+			{
+			  // Reset timing variables to not pass negative update periods to controllers on world reset
+			  last_update_sim_time_ros_ = ros::Time();
+			}
+
+			/// \brief Handle incoming messages from ROS
+			void OnRosMsgStart(const std_msgs::EmptyConstPtr &_msg){
+				isRunning = 1;
+			}
+			void OnRosMsgStop(const std_msgs::EmptyConstPtr &_msg){
+				isRunning = 0;
+			}
+			void OnRosMsgAmplitude(const std_msgs::Float32MultiArrayConstPtr &_msg)
+			{
+				if (_msg->data.size() != 4) {
+					std::cerr << "Received amplitude message with wrong size: " << _msg->data.size() << "\n";
+					return;
+				}
+				gaitPtr->setAmplitude({_msg->data[0], _msg->data[1]}, {_msg->data[2], _msg->data[3]});
+			}
+			void OnRosMsgPhase(const std_msgs::Float32MultiArrayConstPtr &_msg)
+			{
+				if (_msg->data.size() != 4) {
+					std::cerr << "Received phase message with wrong size: " << _msg->data.size() << "\n";
+					return;
+				}
+				gaitPtr->setPhase({_msg->data[0], _msg->data[1]}, {_msg->data[2], _msg->data[3]});
+			}
 
 		/// \brief ROS helper function that processes messages
-		private: void QueueThread()
-		{
-			static const double timeout = 0.01;
-			while (this->rosNode->ok())
-			{	
-				this->rosQueue.callAvailable(ros::WallDuration(timeout));
+		private: 
+			void QueueThread()
+			{
+				static const double timeout = 0.01;
+				while (rosNode->ok())
+				{	
+					rosQueue.callAvailable(ros::WallDuration(timeout));
+				}
 			}
-		}
 		
-		/// \brief Pointer to the model.
-		private: physics::ModelPtr model;
+		
+		private: 
+			/// \brief Pointer to the model.
+			physics::ModelPtr model;
 
-		/// \brief Pointer to the joint.
-		private: physics::Joint_V joints;
+			/// \brief Pointer to the joint.
+			physics::Joint_V joints;
 
-		// \brief PID controllers for the joints
-		private: std::vector<common::PID> pids;
+			/// \brief A node use for ROS transport
+			std::unique_ptr<ros::NodeHandle> rosNode;
 
-		/// \brief A node use for ROS transport
-		private: std::unique_ptr<ros::NodeHandle> rosNode;
+			/// \brief A ROS subscriber
+			ros::Subscriber rosSub1;
+			ros::Subscriber rosSub2;
+			ros::Subscriber rosSub3;
 
-		/// \brief A ROS subscriber
-		private: ros::Subscriber rosSub;
+			/// \brief A ROS callbackqueue that helps process messages
+			ros::CallbackQueue rosQueue;
 
-		/// \brief A ROS callbackqueue that helps process messages
-		private: ros::CallbackQueue rosQueue;
+			// \brief The Gait
+			Gait* gaitPtr;
 
-		// \brief The Gait
-		private: Gait* gaitPtr;
+			/// \brief A thread the keeps running the rosQueue
+			std::thread rosQueueThread;
 
-		/// \brief A thread the keeps running the rosQueue
-		private: std::thread rosQueueThread;
+			// \brief Pointer to the update event connection
+	    		event::ConnectionPtr updateConnection;
 
-		// \brief Pointer to the update event connection
-    		private: event::ConnectionPtr updateConnection;
+			// Timing
+			ros::Time last_update_sim_time_ros_;
 
-		// Timing
-		private: ros::Time last_update_sim_time_ros_;
+			// Movement Control
+			uint8_t isRunning;
 	};
 
 	// Tell Gazebo about this plugin, so that Gazebo can call Load on this plugin.
