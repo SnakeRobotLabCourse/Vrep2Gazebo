@@ -4,11 +4,13 @@
 #include <gazebo/gazebo.hh>
 #include <gazebo/physics/physics.hh>
 #include <thread>
+#include <vector>
 #include "ros/ros.h"
 #include "ros/callback_queue.h"
 #include "ros/subscribe_options.h"
 #include "std_msgs/Float32MultiArray.h"
 #include "std_msgs/Empty.h"
+#include "std_msgs/String.h"
 #include "gait.hpp"
 #include "simplegait.hpp"
 
@@ -51,33 +53,34 @@ namespace gazebo
 				// the Gazebo node
 				rosNode.reset(new ros::NodeHandle("gazebo_client"));
 
-				// Create a named topic, and subscribe to it.
-				ros::SubscribeOptions so1 = ros::SubscribeOptions::create<std_msgs::Float32MultiArray>(
-				      "/" + model->GetName() + "/gait_amplitude",
-				      1,
-				      boost::bind(&SimpleGaitPlugin::OnRosMsgAmplitude, this, _1),
-				      ros::VoidPtr(), &rosQueue);
-				ros::SubscribeOptions so2 = ros::SubscribeOptions::create<std_msgs::Float32MultiArray>(
-				      "/" + model->GetName() + "/gait_phase",
-				      1,
-				      boost::bind(&SimpleGaitPlugin::OnRosMsgPhase, this, _1),
-				      ros::VoidPtr(), &rosQueue);
-				ros::SubscribeOptions so3 = ros::SubscribeOptions::create<std_msgs::Empty>(
+				// Create a named topic for start, stop and gait select, and subscribe to it.
+				ros::SubscribeOptions soStart = ros::SubscribeOptions::create<std_msgs::Empty>(
 				      "/" + model->GetName() + "/gait/start",
 				      1,
 				      boost::bind(&SimpleGaitPlugin::OnRosMsgStart, this, _1),
 				      ros::VoidPtr(), &rosQueue);
+				ros::SubscribeOptions soStop = ros::SubscribeOptions::create<std_msgs::Empty>(
+				      "/" + model->GetName() + "/gait/stop",
+				      1,
+				      boost::bind(&SimpleGaitPlugin::OnRosMsgStop, this, _1),
+				      ros::VoidPtr(), &rosQueue);
+				ros::SubscribeOptions soGaitSel = ros::SubscribeOptions::create<std_msgs::String>(
+				      "/" + model->GetName() + "/gait/select_gait",
+				      1,
+				      boost::bind(&SimpleGaitPlugin::OnRosMsgGaitSel, this, _1),
+				      ros::VoidPtr(), &rosQueue);
 					
-				rosSub1 = rosNode->subscribe(so1);
-				rosSub2 = rosNode->subscribe(so2);
-				rosSub3 = rosNode->subscribe(so3);
+				
+				rosSubStart = rosNode->subscribe(soStart);
+				rosSubStop = rosNode->subscribe(soStop);
+				rosSubGaitSel = rosNode->subscribe(soGaitSel);
 
 				// Spin up the queue helper thread.
 				rosQueueThread = std::thread(std::bind(&SimpleGaitPlugin::QueueThread, this));
 
 				// Bind Gait Polymorphic to SimpleGait
-				SimpleGait* gait = new SimpleGait();
-				gaitPtr = gait;
+				SimpleGait* simpleGait = new SimpleGait();
+				initGait(simpleGait);
 
 				// Listen to the update event. This event is broadcast every
 	      			// simulation iteration.
@@ -97,7 +100,7 @@ namespace gazebo
 				if (isRunning){
 					// Update joint positions
 					for(unsigned i = 0; i < joints.size(); i++){
-						double pos = gaitPtr->getAngle(sim_period.toSec(), i);
+						double pos = gait->getAngle(sim_period.toSec(), i);
 						model->GetJointController()->SetPositionTarget(joints[i]->GetScopedName(), pos);
 					}
 				}
@@ -118,31 +121,39 @@ namespace gazebo
 			void OnRosMsgStop(const std_msgs::EmptyConstPtr &_msg){
 				isRunning = 0;
 			}
-			void OnRosMsgAmplitude(const std_msgs::Float32MultiArrayConstPtr &_msg)
-			{
-				if (_msg->data.size() != 4) {
-					std::cerr << "Received amplitude message with wrong size: " << _msg->data.size() << "\n";
-					return;
+			void OnRosMsgGaitSel(const std_msgs::StringConstPtr &_msg){
+				if (_msg->data.compare("simplegait"))
+				{
+					delete(gait);
+					SimpleGait* simpleGait = new SimpleGait();
+					initGait(simpleGait);
 				}
-				gaitPtr->setAmplitude({_msg->data[0], _msg->data[1]}, {_msg->data[2], _msg->data[3]});
-			}
-			void OnRosMsgPhase(const std_msgs::Float32MultiArrayConstPtr &_msg)
-			{
-				if (_msg->data.size() != 4) {
-					std::cerr << "Received phase message with wrong size: " << _msg->data.size() << "\n";
-					return;
-				}
-				gaitPtr->setPhase({_msg->data[0], _msg->data[1]}, {_msg->data[2], _msg->data[3]});
 			}
 
-		/// \brief ROS helper function that processes messages
+		
 		private: 
+			/// \brief ROS helper function that processes messages
 			void QueueThread()
 			{
 				static const double timeout = 0.01;
 				while (rosNode->ok())
 				{	
 					rosQueue.callAvailable(ros::WallDuration(timeout));
+				}
+			}
+			
+			/// \brief Sets up the new gait
+			void initGait(Gait* gait){
+				this->gait = gait;
+				
+				for(std::vector<ros::Subscriber>::iterator it = gaitSubscribers.begin(); it != gaitSubscribers.end(); ++it) {
+					it->shutdown();				
+				}
+				gaitSubscribers.clear();
+
+				std::vector<ros::SubscribeOptions> gaitSos = gait->getSubscribers(&rosQueue, model->GetName());
+				for(std::vector<ros::SubscribeOptions>::iterator it = gaitSos.begin(); it != gaitSos.end(); ++it) {
+ 					gaitSubscribers.push_back(rosNode->subscribe(*it));
 				}
 			}
 		
@@ -158,15 +169,17 @@ namespace gazebo
 			std::unique_ptr<ros::NodeHandle> rosNode;
 
 			/// \brief A ROS subscriber
-			ros::Subscriber rosSub1;
-			ros::Subscriber rosSub2;
-			ros::Subscriber rosSub3;
+			ros::Subscriber rosSubStart;
+			ros::Subscriber rosSubStop;
+			ros::Subscriber rosSubGaitSel;
 
 			/// \brief A ROS callbackqueue that helps process messages
 			ros::CallbackQueue rosQueue;
 
 			// \brief The Gait
-			Gait* gaitPtr;
+			Gait* gait;
+			// \brief Gait-specific subscribers:
+			std::vector<ros::Subscriber> gaitSubscribers;
 
 			/// \brief A thread the keeps running the rosQueue
 			std::thread rosQueueThread;
