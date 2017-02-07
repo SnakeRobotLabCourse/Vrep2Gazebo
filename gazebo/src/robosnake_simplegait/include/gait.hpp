@@ -7,13 +7,7 @@
 namespace gazebo
 {
 	class Gait{
-		protected: 
-			std::vector<double> speed;
-			std::vector<double> a_h;
-			std::vector<double> a_v;
-			std::vector<double> p_h;
-			std::vector<double> p_v;
-			double s;
+		protected:
 			double t;
 
 			double toRad(double deg);

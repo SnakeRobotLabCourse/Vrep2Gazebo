@@ -17,6 +17,13 @@ namespace gazebo
 			double getAngle(double dt, int joint);
 			void OnRosMsgAmplitude(const std_msgs::Float32MultiArrayConstPtr &_msg);
 			void OnRosMsgPhase(const std_msgs::Float32MultiArrayConstPtr &_msg);
+		protected:
+			std::vector<double> speed;
+			std::vector<double> a_h;
+			std::vector<double> a_v;
+			std::vector<double> p_h;
+			std::vector<double> p_v;
+			double s;
 	};
 }
 

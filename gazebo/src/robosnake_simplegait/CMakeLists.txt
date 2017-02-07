@@ -27,6 +27,9 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${GAZEBO_CXX_FLAGS}")
 add_library(simplegait SHARED src/simplegait.cpp src/gait.cpp)
 target_link_libraries(simplegait ${GAZEBO_libraries} ${catkin_LIBRARIES})
 
+add_library(sidewinding SHARED src/sidewinding.cpp src/gait.cpp)
+target_link_libraries(sidewinding ${GAZEBO_libraries} ${catkin_LIBRARIES})
+
 add_library(${PROJECT_NAME} SHARED src/robosnake_simplegait.cpp)
 target_link_libraries(
   ${PROJECT_NAME}
@@ -34,6 +37,7 @@ target_link_libraries(
   ${GAZEBO_libraries}
   ${roscpp_LIBRARIES}
   simplegait
+  sidewinding
 )
 
 catkin_package(
