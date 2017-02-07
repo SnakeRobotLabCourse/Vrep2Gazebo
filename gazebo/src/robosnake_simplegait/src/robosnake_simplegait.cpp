@@ -13,6 +13,7 @@
 #include "std_msgs/String.h"
 #include "gait.hpp"
 #include "simplegait.hpp"
+#include "sidewinding.hpp"
 
 namespace gazebo
 {
@@ -128,7 +129,18 @@ namespace gazebo
 					SimpleGait* simpleGait = new SimpleGait();
 					initGait(simpleGait);
 				}
-			}
+				else if (_msg->data.compare("sidewinding"))
+				{
+					delete(gait);
+					SidewindingGait* sidewindingGait = new SidewindingGait();
+					initGait(sidewindingGait);
+				}
+				else
+				{
+					std::cerr << "Invalid gait: " << _msg->data;
+				}
+
+			}	
 
 		
 		private: 

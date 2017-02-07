@@ -9,7 +9,7 @@ SidewindingGait::SidewindingGait()
 {
 	C = {0, 0};
 	A = {toRad(40), toRad(40)};
-	bigOmega = {2.0 / 3.0 * M_PI, 2.0 / 3.0 * M_PI);
+	bigOmega = {2.0 / 3.0 * M_PI, 2.0 / 3.0 * M_PI};
 	smallOmega = {4.0, 4.0};
 	rho = M_PI/4.0;
 }
