@@ -1,33 +1,7 @@
 # Vrep2Gazebo
 
-## Dependencies
+This Repo contains the SnakeRobot simulation in Gazebo allowing control through ROS with e.g. Matlab.
 
-```
-sudo apt install 
-ros-kinetic-gazebo-ros-control
-ros-kinetic-effort-controllers
-ros-kinetic-joint-state-controller
-```
+ * See [gazebo/](gazebo/) for details on how to setup Gazebo and ROS and how to run the simulation
+ * See [matlab/](matlab/) for details on how to control the snake from Matlab
 
-## Build
-Go to `gazebo`-folder and build using
-```
-catkin_make
-```
-(You might need to delete `build/` and `devel/` before)
-
-## Run
-Make sure you have
-```
-source devel/setup.bash
-```
-
-Start Gazebo with the model
-```
-roslaunch robosnake_gazebo robosnake.launch
-```
-
-Start the controller
-```
-roslaunch robosnake_control robosnake_control.launch
-```

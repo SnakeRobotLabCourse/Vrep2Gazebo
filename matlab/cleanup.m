@@ -1,2 +1,5 @@
+
+% Clean state
+
 clear;
 rosshutdown;

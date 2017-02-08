@@ -1,6 +1,5 @@
 function [] = setJointTargetPosition(joint, position)
-%   Summary
-%   Description
+%   Sets the given joint to the given target angle (in Radians)
     global snakeJoints;
     persistent anglePubs;
     persistent angleMsgs;
