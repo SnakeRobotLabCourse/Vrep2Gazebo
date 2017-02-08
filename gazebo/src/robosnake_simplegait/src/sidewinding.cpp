@@ -62,12 +62,10 @@ std::vector<double> SidewindingGait::getAngle(double dt, int numberJoints)
 		if (i % 2 == 0)
 		{
 			result.push_back(C[1] + A[1] * (((1.0 + i)/numberJoints) * 0.9 + 0.1) * sin(smallOmega[1] * t + i * bigOmega[1]));
-			std::cerr << t << ", " << i << ": " << result[i] << "\n";
 		}
 		else
 		{
 			result.push_back(C[0] + A[0] * (((1.0 + i)/numberJoints) * 0.9 + 0.1) * cos(smallOmega[0] * t + i * bigOmega[0] + rho));
-			std::cerr << t << ", " << i << ": " << result[i] << "\n";
 		}
 	}
 	return result;
