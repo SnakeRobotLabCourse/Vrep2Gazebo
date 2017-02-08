@@ -25,9 +25,9 @@ Make sure that `ipaddress='192.168.42.42';` contains the IP address that the ROS
 ## Start the gait
 First run init.m to setup the connection to ROS / Gazebo / The RobotSnake
 
-Then start eg. simpleGait.m to run a gait and test the connection.
+Then start eg. perform_gait_simple.m to run a gait and test the connection.
 
-Use `rosshutdown` to stop everything and re-run init.m in case of problems.
+Use `rosshutdown` or cleanup.m to stop everything and re-run init.m in case of problems.
 
 
 
@@ -41,7 +41,7 @@ The rospublishers will be created if not existing and will be cached to avoid re
 Without caching the publishing might not work.
 For the same reason, the first message sent might not have an effect.
 
-## rolling.m
+## gait_rolling.m
 This function should be called with a timer to perform the rolling gait.
 It uses global values defined in init.m, so this needs to be run first.
 By subscribing to the rostopic `/clock`, the gait is synchronized to the simulation time of gazebo.

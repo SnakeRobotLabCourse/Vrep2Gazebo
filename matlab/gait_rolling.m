@@ -1,4 +1,4 @@
-function [] = rolling(obj, event) %#ok<INUSL>
+function [] = gait_rolling(obj, event) %#ok<INUSL>
 %ROLLING Summary of this function goes here
 %   Detailed explanation goes here
 

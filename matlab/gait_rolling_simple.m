@@ -1,4 +1,4 @@
-function [] = simpleRolling(obj, event, timeStep) %#ok<INUSL>
+function [] = gait_rolling_simple(obj, event, timeStep) %#ok<INUSL>
 %ROLLING Summary of this function goes here
 %   Detailed explanation goes here
 

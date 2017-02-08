@@ -1,3 +1,6 @@
+
+% Initialize global Variables & IP-Address
+
 ipaddress='192.168.184.4';
 rosinit(ipaddress);
 
