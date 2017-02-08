@@ -15,7 +15,7 @@ namespace gazebo
 			SidewindingGait();
 			
 			std::vector<ros::SubscribeOptions> getSubscribers(ros::CallbackQueue *queue, std::string modelName);
-			double getAngle(double dt, int joint);
+			std::vector<double> getAngle(double dt, int numberJoints);
 			/**void OnRosMsgAmplitude(const std_msgs::Float32MultiArrayConstPtr &_msg);
 			void OnRosMsgPhase(const std_msgs::Float32MultiArrayConstPtr &_msg);**/
 		protected:

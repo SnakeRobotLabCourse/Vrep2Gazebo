@@ -53,14 +53,20 @@ void SidewindingGait::OnRosMsgPhase(const std_msgs::Float32MultiArrayConstPtr &_
 	p_h = {toRad(_msg->data[2]), toRad(_msg->data[3])};
 }**/
 
-double SidewindingGait::getAngle(double dt, int joint)
+std::vector<double> SidewindingGait::getAngle(double dt, int numberJoints)
 {
-	if (joint % 2)
+	t += dt;
+	std::vector<double> result;
+	for(unsigned i = 0; i < numberJoints; i++)
 	{
-		return C[0] + A[0] * (((1.0 + joint)/11.0) * 0.9 + 0.1) * cos(smallOmega[0] * t * (joint) * bigOmega[0] + rho);
+		if (!i % 2)
+		{
+			result.push_back(C[0] + A[0] * (((1.0 + i)/numberJoints) * 0.9 + 0.1) * cos(smallOmega[0] * t + i * bigOmega[0] + rho));
+		}
+		else
+		{
+			result.push_back(C[1] + A[1] * (((1.0 + i)/numberJoints) * 0.9 + 0.1) * sin(smallOmega[1] * t + i * bigOmega[1]));
+		}
 	}
-	else
-	{
-		return C[1] + A[1] * (((1.0 + joint)/11.0) * 0.9 + 0.1) * sin(smallOmega[1] * t * (joint) * bigOmega[1]);
-	}	
+	return result;
 }

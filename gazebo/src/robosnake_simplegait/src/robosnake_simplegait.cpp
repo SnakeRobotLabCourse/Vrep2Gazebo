@@ -66,7 +66,7 @@ namespace gazebo
 				      boost::bind(&SimpleGaitPlugin::OnRosMsgStop, this, _1),
 				      ros::VoidPtr(), &rosQueue);
 				ros::SubscribeOptions soGaitSel = ros::SubscribeOptions::create<std_msgs::String>(
-				      "/" + model->GetName() + "/gait/select_gait",
+				      "/" + model->GetName() + "/gait/select",
 				      1,
 				      boost::bind(&SimpleGaitPlugin::OnRosMsgGaitSel, this, _1),
 				      ros::VoidPtr(), &rosQueue);
@@ -82,6 +82,7 @@ namespace gazebo
 				// Bind Gait Polymorphic to SimpleGait
 				SimpleGait* simpleGait = new SimpleGait();
 				initGait(simpleGait);
+				isRunning = 1;
 
 				// Listen to the update event. This event is broadcast every
 	      			// simulation iteration.
@@ -99,10 +100,10 @@ namespace gazebo
 				ros::Duration sim_period = sim_time_ros - last_update_sim_time_ros_;
 
 				if (isRunning){
+					std::vector<double> pos = gait->getAngle(sim_period.toSec(), joints.size());
 					// Update joint positions
 					for(unsigned i = 0; i < joints.size(); i++){
-						double pos = gait->getAngle(sim_period.toSec(), i);
-						model->GetJointController()->SetPositionTarget(joints[i]->GetScopedName(), pos);
+						model->GetJointController()->SetPositionTarget(joints[i]->GetScopedName(), pos[i]);
 					}
 				}
 
@@ -123,21 +124,23 @@ namespace gazebo
 				isRunning = 0;
 			}
 			void OnRosMsgGaitSel(const std_msgs::StringConstPtr &_msg){
-				if (_msg->data.compare("simplegait"))
+				if (!_msg->data.compare("simplegait"))
 				{
 					delete(gait);
 					SimpleGait* simpleGait = new SimpleGait();
 					initGait(simpleGait);
+					std::cerr << "Loaded simple gait\n";
 				}
-				else if (_msg->data.compare("sidewinding"))
+				else if (!_msg->data.compare("sidewinding"))
 				{
 					delete(gait);
 					SidewindingGait* sidewindingGait = new SidewindingGait();
 					initGait(sidewindingGait);
+					std::cerr << "Loaded sidewinding gait\n";
 				}
 				else
 				{
-					std::cerr << "Invalid gait: " << _msg->data;
+					std::cerr << "Invalid gait: " << _msg->data << "\n";
 				}
 
 			}	

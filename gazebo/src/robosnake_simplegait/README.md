@@ -14,3 +14,5 @@ data: [10, 10, 20, 20]"``
    dim: []
    data_offset: 0
 data: [10, 10, 20, 20]"``
+
+ - ``rostopic pub /robosnake/gait/select std_msgs/String "sidewinding"``
