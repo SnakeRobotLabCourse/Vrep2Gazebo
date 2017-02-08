@@ -1,6 +1,7 @@
 This is a gazebo plugin that controls the gait directly.
 
 To use it, declare ``<plugin>...</plugin>`` in your model sdf.
+(Already done here)
 
 Commands are:
  - ``rostopic pub /robosnake/gait/start std_msgs/Empty``
