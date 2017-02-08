@@ -7,9 +7,9 @@ using namespace gazebo;
 
 SidewindingGait::SidewindingGait()
 {
-	C = {0, 0};
+	C = {0.0, 0.0};
 	A = {toRad(40), toRad(40)};
-	bigOmega = {2.0 / 3.0 * M_PI, 2.0 / 3.0 * M_PI};
+	bigOmega = {M_PI * 2.0 / 3.0, M_PI * 2.0 / 3.0};
 	smallOmega = {4.0, 4.0};
 	rho = M_PI/4.0;
 }
@@ -59,13 +59,15 @@ std::vector<double> SidewindingGait::getAngle(double dt, int numberJoints)
 	std::vector<double> result;
 	for(unsigned i = 0; i < numberJoints; i++)
 	{
-		if (!i % 2)
+		if (i % 2 == 0)
 		{
-			result.push_back(C[0] + A[0] * (((1.0 + i)/numberJoints) * 0.9 + 0.1) * cos(smallOmega[0] * t + i * bigOmega[0] + rho));
+			result.push_back(C[1] + A[1] * (((1.0 + i)/numberJoints) * 0.9 + 0.1) * sin(smallOmega[1] * t + i * bigOmega[1]));
+			std::cerr << t << ", " << i << ": " << result[i] << "\n";
 		}
 		else
 		{
-			result.push_back(C[1] + A[1] * (((1.0 + i)/numberJoints) * 0.9 + 0.1) * sin(smallOmega[1] * t + i * bigOmega[1]));
+			result.push_back(C[0] + A[0] * (((1.0 + i)/numberJoints) * 0.9 + 0.1) * cos(smallOmega[0] * t + i * bigOmega[0] + rho));
+			std::cerr << t << ", " << i << ": " << result[i] << "\n";
 		}
 	}
 	return result;
