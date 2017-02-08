@@ -16,10 +16,13 @@ You might want to try these in case of errors and to improve things:
  * Install ROS Kinetic according to [http://wiki.ros.org/kinetic/Installation/Ubuntu]([http://wiki.ros.org/kinetic/Installation/Ubuntu])
  * Make sure `ros-kinetic-gazebo-ros-pkgs` is already installed
  * set ros envs (add to `~/.bashrc`):
+   
 		ROS_MASTER_URI=http://192.168.42.142:11311
 		ROS_HOSTNAME=192.168.42.142
+	
 	(Include the local IP-Address of the VM, of course)
  * further dependencies:
+ 
 		sudo apt install 
 		ros-kinetic-gazebo-ros-control
 		ros-kinetic-effort-controllers
