@@ -67,3 +67,13 @@ If you want to control the joints individually via ROS (e.g. from Matlab), also 
 roslaunch robosnake_control robosnake_control.launch
 ```
 
+
+# Possible Problems
+
+To include the meshes with a relative Path, the environment variable `GAZEBO_MODEL_PATH` has to be set correctly.
+This is done automatically in the package.xml **only if the gait plugin is enabled**
+
+If the model is invisible in Gazebo, try setting the environment variable manually:
+```
+export GAZEBO_MODEL_PATH=<path to repo>/gazebo/src/robosnake_description:${GAZEBO_MODEL_PATH}
+```
