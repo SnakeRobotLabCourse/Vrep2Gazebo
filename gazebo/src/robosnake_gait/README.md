@@ -10,12 +10,12 @@ Commands are:
  - ``rostopic pub /robosnake/simplegait/set_amplitude std_msgs/Float32MultiArray "layout:
    dim: []
    data_offset: 0
-data: [10, 10, 20, 20]"`` (amplitude vertical, then horizontal in deg)
+data: [20, 30, 20, 30]"`` (amplitude vertical, then horizontal in deg)
 
  - ``rostopic pub /robosnake/simplegait/set_phase std_msgs/Float32MultiArray "layout:
    dim: []
    data_offset: 0
-data: [10, 10, 20, 20]"`` (phase vertical, then horizontal in deg)
+data: [0, 0, 0, 0]"`` (phase vertical, then horizontal in deg)
 
 
  - ``rostopic pub /robosnake/sidewinding/set_A std_msgs/Float32MultiArray "layout:
@@ -38,7 +38,7 @@ data: [40, 40]"`` (in absolute numbers)
    data_offset: 0
 data: [2.1, 2.1]"`` (in absolute numbers)
 
- - ``rostopic pub /robosnake/sidewinding/set_rho std_msgs/Float32 "0.9"``(in deg)
+ - ``rostopic pub /robosnake/sidewinding/set_rho std_msgs/Float32 0.9``(in deg)
 
  - ``rostopic pub /robosnake/gait/select std_msgs/String "sidewinding"``
  - ``rostopic pub /robosnake/gait/select std_msgs/String "simplegait"``

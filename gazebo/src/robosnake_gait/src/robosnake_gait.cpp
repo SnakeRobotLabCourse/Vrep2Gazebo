@@ -18,11 +18,11 @@
 namespace gazebo
 {
   /// \brief A plugin to control a Velodyne sensor.
-	class SimpleGaitPlugin : public ModelPlugin
+	class GaitPlugin : public ModelPlugin
 	{
 		/// \brief Constructor
 		public: 
-			SimpleGaitPlugin() {}
+			GaitPlugin() {}
 
 			/// \brief The load function is called by Gazebo when the plugin is
 			/// inserted into simulation
@@ -58,17 +58,17 @@ namespace gazebo
 				ros::SubscribeOptions soStart = ros::SubscribeOptions::create<std_msgs::Empty>(
 				      "/" + model->GetName() + "/gait/start",
 				      1,
-				      boost::bind(&SimpleGaitPlugin::OnRosMsgStart, this, _1),
+				      boost::bind(&GaitPlugin::OnRosMsgStart, this, _1),
 				      ros::VoidPtr(), &rosQueue);
 				ros::SubscribeOptions soStop = ros::SubscribeOptions::create<std_msgs::Empty>(
 				      "/" + model->GetName() + "/gait/stop",
 				      1,
-				      boost::bind(&SimpleGaitPlugin::OnRosMsgStop, this, _1),
+				      boost::bind(&GaitPlugin::OnRosMsgStop, this, _1),
 				      ros::VoidPtr(), &rosQueue);
 				ros::SubscribeOptions soGaitSel = ros::SubscribeOptions::create<std_msgs::String>(
 				      "/" + model->GetName() + "/gait/select",
 				      1,
-				      boost::bind(&SimpleGaitPlugin::OnRosMsgGaitSel, this, _1),
+				      boost::bind(&GaitPlugin::OnRosMsgGaitSel, this, _1),
 				      ros::VoidPtr(), &rosQueue);
 					
 				
@@ -77,7 +77,7 @@ namespace gazebo
 				rosSubGaitSel = rosNode->subscribe(soGaitSel);
 
 				// Spin up the queue helper thread.
-				rosQueueThread = std::thread(std::bind(&SimpleGaitPlugin::QueueThread, this));
+				rosQueueThread = std::thread(std::bind(&GaitPlugin::QueueThread, this));
 
 				// Bind Gait Polymorphic to SimpleGait
 				SimpleGait* simpleGait = new SimpleGait();
@@ -87,7 +87,7 @@ namespace gazebo
 				// Listen to the update event. This event is broadcast every
 	      			// simulation iteration.
 	      			updateConnection = event::Events::ConnectWorldUpdateBegin(
-		  			boost::bind(&SimpleGaitPlugin::OnUpdate, this, _1));
+		  			boost::bind(&GaitPlugin::OnUpdate, this, _1));
 			
 			}
 
@@ -210,6 +210,6 @@ namespace gazebo
 	};
 
 	// Tell Gazebo about this plugin, so that Gazebo can call Load on this plugin.
-	GZ_REGISTER_MODEL_PLUGIN(SimpleGaitPlugin)
+	GZ_REGISTER_MODEL_PLUGIN(GaitPlugin)
 }
 #endif

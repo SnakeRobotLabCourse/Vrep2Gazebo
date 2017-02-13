@@ -16,8 +16,13 @@ namespace gazebo
 			
 			std::vector<ros::SubscribeOptions> getSubscribers(ros::CallbackQueue *queue, std::string modelName);
 			std::vector<double> getAngle(double dt, int numberJoints);
-			/**void OnRosMsgAmplitude(const std_msgs::Float32MultiArrayConstPtr &_msg);
-			void OnRosMsgPhase(const std_msgs::Float32MultiArrayConstPtr &_msg);**/
+
+			void OnRosMsgC(const std_msgs::Float32MultiArrayConstPtr &_msg);
+			void OnRosMsgA(const std_msgs::Float32MultiArrayConstPtr &_msg);
+			void OnRosMsgBigOmega(const std_msgs::Float32MultiArrayConstPtr &_msg);
+			void OnRosMsgSmallOmega(const std_msgs::Float32MultiArrayConstPtr &_msg);
+			void OnRosMsgRho(const std_msgs::Float32ConstPtr &_msg);
+
 		protected:
 			std::vector<double> C;
 			std::vector<double> A;

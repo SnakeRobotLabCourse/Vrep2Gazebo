@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(robosnake_simplegait)
+project(robosnake_gait)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -30,7 +30,7 @@ target_link_libraries(simplegait ${GAZEBO_libraries} ${catkin_LIBRARIES})
 add_library(sidewinding SHARED src/sidewinding.cpp src/gait.cpp)
 target_link_libraries(sidewinding ${GAZEBO_libraries} ${catkin_LIBRARIES})
 
-add_library(${PROJECT_NAME} SHARED src/robosnake_simplegait.cpp)
+add_library(${PROJECT_NAME} SHARED src/robosnake_gait.cpp)
 target_link_libraries(
   ${PROJECT_NAME}
   ${catkin_LIBRARIES}

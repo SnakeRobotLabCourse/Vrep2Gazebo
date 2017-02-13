@@ -1425,6 +1425,6 @@
     <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
         <robotNamespace>/robosnake</robotNamespace>
     </plugin>
-    <plugin name="robosnake_simplegait" filename="librobosnake_simplegait.so"/>-->
+    <plugin name="robosnake_gait" filename="librobosnake_gait.so"/>-->
   </model>
 </sdf>
